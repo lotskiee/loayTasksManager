@@ -28,6 +28,6 @@ public class add_Task_Activity extends AppCompatActivity {
         imgAdd=findViewById(R.id.imgAdd);
         etSubject=findViewById(R.id.etSubject);
         etTitle=findViewById(R.id.etTitle);
-        sbTask=findViewById(R.id.sbTask);
+        sbTask=findViewById(R.id.sbTask);//
     }
 }
