@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add_Task_Activity">
+
+    <Spinner
+        android:id="@+id/spnAddTask"
+        android:layout_width="404dp"
+        android:layout_height="48dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="102dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:text="SAVE"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="630dp" />
+
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="331dp"
+        android:layout_height="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/my_logo"
+        tools:layout_editor_absoluteY="439dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayout"
+        android:layout_width="415dp"
+        android:layout_height="63dp"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="134dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputEditText"
+        android:layout_width="411dp"
+        android:layout_height="54dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <SeekBar
+        android:id="@+id/sbTask"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="216dp"
+        android:layout_height="85dp"
+        android:max="10"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
