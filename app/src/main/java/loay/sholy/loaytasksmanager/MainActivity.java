@@ -11,10 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-public class MainActivity extends AppCompatActivity {
+//1. وضع فئة المازين
+public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
     private FloatingActionButton FloatingActionButton2;
     private SearchView svSearchTask;
@@ -50,17 +51,39 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure?");
-        builder.setCancelable(false);
-        builder.setPositiveButton("YES",this);
-        builder.setNegativeButton("NO", (DialogInterface.OnClickListener) this);
+        builder.setCancelable(true);// تسكير الديالوج في ضغطة على ال "back" أو ما يشابه
+              // listener 3.   add listener to the buttons
+        builder.setPositiveButton("YES",  this);
+        builder.setNegativeButton("NO",  this);
         AlertDialog dialog=builder.create();
         dialog.show();
-            Intent i = new Intent(getApplicationContext(), Sign_in_activity.class);
-            startActivity(i);
+
 
 
         }
         return true;
     }
 
+    /**
+     * event handler
+     * @param dialogInterface the active dialog
+     * @param Which the button id which cause the event
+     */
+
+    // listener 2. implement method
+    @Override
+    public void onClick(DialogInterface dialogInterface, int Which) {
+        // listener 4. react for each action
+        if (Which==dialogInterface.BUTTON_POSITIVE)
+        {
+            Toast.makeText(getApplicationContext(), "Loging out", Toast.LENGTH_SHORT).show();
+            dialogInterface.cancel();
+            finish();//to close the current activity
+        }
+        if (Which==dialogInterface.BUTTON_NEGATIVE)
+        {
+            Toast.makeText(getApplicationContext(), "Loging out canceled", Toast.LENGTH_SHORT).show();
+            dialogInterface.cancel();
+        }
+    }
 }
