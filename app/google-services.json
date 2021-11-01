@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416140278068",
+    "project_id": "loaytasksmanager",
+    "storage_bucket": "loaytasksmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416140278068:android:5b1a701e0e59e899c3cd61",
+        "android_client_info": {
+          "package_name": "loay.sholy.loaytasksmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416140278068-fmq1hij1j3hn5k0phnrh11t3eth1trk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMetY7qh8YDmV6O1fJOZ3-u35BXy9WHGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416140278068-fmq1hij1j3hn5k0phnrh11t3eth1trk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
