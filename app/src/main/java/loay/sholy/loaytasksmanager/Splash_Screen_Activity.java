@@ -1,10 +1,10 @@
 package loay.sholy.loaytasksmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Splash_Screen_Activity extends AppCompatActivity {
 
@@ -19,6 +19,7 @@ public class Splash_Screen_Activity extends AppCompatActivity {
             //thread#2
             @Override
             public void run() {
+                // هنا المقطع الذي سيعمل بالتزامن مع مقاطع اخرى
                 //thread#3
                 int ms =3*1000;
                 try {
