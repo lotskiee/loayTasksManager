@@ -10,28 +10,8 @@
         android:id="@+id/rgEndedTasks"
         android:layout_width="413dp"
         android:layout_height="144dp"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteY="299dp">
 
-        <RadioButton
-            android:id="@+id/radiobtn_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Delete" />
-
-        <RadioButton
-            android:id="@+id/radiobtn2_cross_line"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cross line" />
-
-        <RadioButton
-            android:id="@+id/radiobtn3_move_to_end"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Move to end" />
     </RadioGroup>
 
     <Button
@@ -39,59 +19,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign out"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="903dp" />
 
     <ToggleButton
         android:id="@+id/btnonoff"
         android:layout_width="80dp"
         android:layout_height="37dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:text="ToggleButton"
-        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="33dp" />
 
     <TextView
         android:id="@+id/tvsign"
         android:layout_width="236dp"
         android:layout_height="28dp"
         android:text="stay signed in"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnClean"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:text="Clean History"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="33dp" />
 
     <TextView
         android:id="@+id/tvEnded"
         android:layout_width="267dp"
         android:layout_height="31dp"
+        android:layout_marginStart="16dp"
         android:text="Ended tasks"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="113dp" />
 
     <Switch
         android:id="@+id/swKeephistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="Keep history"
-        app:layout_constraintBottom_toTopOf="parent"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="509dp" />
+
+    <RadioButton
+        android:id="@+id/radiobtn3_move_to_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Move to end"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <RadioButton
+        android:id="@+id/radiobtn2_cross_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cross line"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <RadioButton
+        android:id="@+id/radiobtn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <Button
+        android:id="@+id/btnClean"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="144dp"
+        android:text="Clean History"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="583dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 //1. وضع فئة المازين
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         {
             Toast.makeText(getApplicationContext(), "Loging out", Toast.LENGTH_SHORT).show();
             dialogInterface.cancel();
+            // تسجيل الخروج
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+            auth.signOut();
             finish();//to close the current activity
         }
         if (Which==dialogInterface.BUTTON_NEGATIVE)
