@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FloatingActionButton2 = findViewById(R.id.floatingActionButton2);
+        FloatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),add_Task_Activity.class));
+            }
+        });
         svSearchTask = findViewById(R.id.svSearch);
         lvAllTasks = findViewById(R.id.lvAllTasks);
     }

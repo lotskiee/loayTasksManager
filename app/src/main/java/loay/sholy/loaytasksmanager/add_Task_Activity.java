@@ -6,9 +6,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -65,6 +69,22 @@ public class add_Task_Activity extends AppCompatActivity {
             FirebaseDatabase db=FirebaseDatabase.getInstance();
             DatabaseReference ref = db.getReference();
             String key=ref.child("my tasks").push().getKey();
+            myTask.setKey(key);
+
+            ref.child("my tasks").child(key).setValue(myTask).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+
+                        Toast.makeText(getApplicationContext(), "Add successful", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Add not successful", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
 
         }
