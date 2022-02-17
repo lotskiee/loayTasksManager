@@ -70,8 +70,9 @@ public class add_Task_Activity extends AppCompatActivity {
             DatabaseReference ref = db.getReference();
             String key=ref.child("my tasks").push().getKey();
             myTask.setKey(key);
+            //
 
-            ref.child("my tasks").child(key).setValue(myTask).addOnCompleteListener(new OnCompleteListener<Void>() {
+            ref.child("my tasks").child(uid).child(key).setValue(myTask).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {

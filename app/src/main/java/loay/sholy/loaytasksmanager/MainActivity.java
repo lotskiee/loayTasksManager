@@ -16,10 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import loay.sholy.loaytasksmanager.data.MyTask;
+import loay.sholy.loaytasksmanager.data.MyTaskAdapter;
 
 //1. وضع فئة المازين
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
-
+   // read 1 ( belongs to list view section aka the english lang )
+    private MyTaskAdapter taskAdapter;
     private FloatingActionButton FloatingActionButton2;
     private SearchView svSearchTask;
     private ListView lvAllTasks;
@@ -37,6 +46,46 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         });
         svSearchTask = findViewById(R.id.svSearch);
         lvAllTasks = findViewById(R.id.lvAllTasks);
+        // read 2
+        taskAdapter=new MyTaskAdapter(this,R.layout.task_item_layout);
+        // read 3: set adapter to listview (connect to the data to list view
+        lvAllTasks.setAdapter(taskAdapter);
+    }
+    // read 4:
+    protected void onResume(){
+        super.onResume();
+        readTasksFromFireBase("");
+    }
+// read 5:
+
+    /**
+     * read tasks from firebaase and fill the adapter data structure
+     * s-is a text to search,if it is empty the method show all resutls
+     * @param s
+     */
+    private void readTasksFromFireBase(String s) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        String uid = FirebaseAuth.getInstance().getUid();// current user id.
+        ref.child("mytasks").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                taskAdapter.clear();
+                for (DataSnapshot d:dataSnapshot.getChildren())
+                      {
+                          MyTask t=d.getValue(MyTask.class);
+                          taskAdapter.add(t);
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
